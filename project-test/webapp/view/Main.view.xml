@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="ngsc.projecttest.controller.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app" class="myAppDemoWT">
+			<pages>
+				<Page id="Page" title="{i18n>title}">
+					<content>
+						<mvc:XMLView id="view" viewName="ngsc.projecttest.view.HelloPanel"/>
+						<mvc:XMLView id="view1" viewName="ngsc.projecttest.view.InvoiceList"/>
+					</content>
+				</Page>
+			</pages>	
+		</App>
+	</Shell>
+</mvc:View>

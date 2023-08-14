@@ -1,0 +1,6 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page id="page" title="{i18n>secondtitle}">
+        <content />
+    <Text id="text_second" text="Poject Second"></Text>
+    </Page>
+</mvc:View>

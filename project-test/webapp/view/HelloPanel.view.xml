@@ -1,0 +1,22 @@
+<mvc:View
+           controllerName="ngsc.projecttest.controller.HelloPanel"
+           xmlns:mvc="sap.ui.core.mvc"
+           xmlns="sap.m"
+           displayBlock="true">
+
+    <Panel id="hellopanel" headerText="{i18n>helloPanelTitle}" 
+            class="sapUiResponsiveMargin" width="auto">
+        <content>
+            <Button id="button1" text="{i18n>showHelloButtonText}" press="_onShowHello"></Button>
+            <Input id="input1" value="{/create_data/name}" valueLiveUpdate="true" width="60%"></Input>
+            <FormattedText id="formattext" htmlText="Hello {/create_data/name}" 
+            class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"></FormattedText>
+        </content>
+        <content>
+            <Button id="Fragment" text="{i18n>Fragment}"
+                 press="_showFragment" 
+				class="sapUiSmallMarginEnd"
+                icon="sap-icon://show" iconFirst="false" ></Button>
+        </content>
+    </Panel>         
+</mvc:View>
