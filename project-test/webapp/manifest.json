@@ -105,12 +105,25 @@
           ]
         },
         {
-          "pattern": "Second",
-          "name": "Second" ,
+          "pattern": "HelloPanel",
+          "name": "HelloPanel" ,
           "target": [
-              "Second"
+              "HelloPanel"
           ]
+        },
+        {
+          "pattern": "InvoiceList",
+          "name": "InvoiceList" ,
+          "view": "InvoiceList" ,
+          "controlAggregation": "pages"
+        },
+        {
+          "pattern": "Second/{invoicePath}",
+          "name": "Second" ,
+          "view": "Second"
+
         }
+
         
       ],
       "targets": {
@@ -120,6 +133,10 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
+        },
+        "Second":{
+          "id": "Second",
+          "name": "Second"
         }
       }
     },

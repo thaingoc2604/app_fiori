@@ -1,26 +1,51 @@
 <mvc:View 
-          controllerName="ngsc.projecttest.controller.HelloPanel"
+          controllerName="ngsc.projecttest.controller.InvoiceList"
            xmlns:mvc="sap.ui.core.mvc"
            xmlns="sap.m" 
            displayBlock="true" >
       <List
+      id="invoiceList"
 	  headerText="{i18n>invoiceListTitle}"
         class="sapUiResponsiveMargin"
-        width="auto"
-        items="{invoice>/Invoices}"
-        >
+        width="auto"     
+        items="{
+          path : 'invoice>/Invoices' ,
+          sorter : {
+               path: 'ProductName'  ,
+               group : true , 
+               descending : 'true'
+
+             }
+          }">
+          <headerToolbar>
+               <Toolbar >
+                    <Title text="{i18n>invoiceListTitle}"/>
+                     <ToolbarSpacer/>
+                    <SearchField width="50%" search=".onFilterInvoices"/>
+               </Toolbar>
+          </headerToolbar>
           <items>
-            <ObjectListItem title="{invoice>ExtendedPrice} x {invoice>ShipperName}"
+            <ObjectListItem  title="{invoice>ExtendedPrice} x {invoice>ProductName}"
                    number="{
                         parts: [{path: 'invoice>ExtendedPrice'} , {path: 'view>currency'}] ,
-                        type:'sap.ui.model.type.currency',
+                        type:'sap.ui.model.type.Currency',
                         formatOptions:{
-                              showMeasure: true
+                              showMeasure: false
                         }
                    }"     
-                  numberUnit="{view>currency}"
-                  />
+                  numberUnit="{view_list>/currency1}"
+                  numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+                  type="Navigation"
+                  press="onPress">
+                  <firstStatus>
+                    <ObjectStatus text="{
+                         path : 'invoice>Status',
+                         formatter : '.formatter.statusText'
+                    }"/>
+                  </firstStatus>
+               </ObjectListItem>
           </items>
 	</List>
-
 </mvc:View>
+
+<!-- https://stackoverflow.com/questions/46484467/how-to-clear-dialog-xmlfragment-content-after-closeqqqqqqqqqqqqq -->

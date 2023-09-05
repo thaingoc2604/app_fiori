@@ -2,12 +2,13 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
+    "sap/ui/model/resource/ResourceModel",
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, JSONModel, ResourceModel) {
+    function (Controller, MessageToast, JSONModel, ResourceModel,Fragment) {
         "use strict";
 
         return Controller.extend("ngsc.projecttest.controller.Main", {
@@ -41,5 +42,6 @@ sap.ui.define([
                // show message
                MessageToast.show(sMsg);
             }
+        
         });
     });

@@ -11,6 +11,8 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("ngsc.projecttest.controller.HelloDialog", {
-            
+            closeDialog: function () {
+                this.byId("openDialog").close();
+            }
         });
     });

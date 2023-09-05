@@ -14,7 +14,7 @@
         </content>
         <content>
             <Button id="Fragment" text="{i18n>Fragment}"
-                 press="_showFragment" 
+                 press=".showFragment" 
 				class="sapUiSmallMarginEnd"
                 icon="sap-icon://show" iconFirst="false" ></Button>
         </content>

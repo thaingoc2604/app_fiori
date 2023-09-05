@@ -9,6 +9,7 @@ sap.ui.define([
     
     return Controller.extend("ngsc.projecttest.controller.HelloPanel", {
         onInit: function () {
+        
             var oData = {
                 create_data: {
                     name : "NgocPT1"
@@ -35,7 +36,7 @@ sap.ui.define([
            MessageToast.show(sMessage);
         },
         
-        _showFragment : function () {
+        showFragment : function () {
           //create dialog 
             if(!this.pDialog){
                 this.pDialog = Fragment.load({
@@ -49,8 +50,10 @@ sap.ui.define([
         onClose : function () {
             this.byId("helloDialog").close(); // Đóng dialog
          },
-        //  onAfterDialogClose: function(oEvent) { //remove contents of dialog after it has been closed
-        //     oEvent.getSource().destroy();
-        //   }
+         onAfterDialogClose: function(oEvent) { //remove contents of dialog after it has been closed
+            oEvent.getSource().destroy();
+          }
+
+        
     });
 });
